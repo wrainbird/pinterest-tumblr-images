@@ -25,6 +25,5 @@ This wraps a container around each image with the link hidden until hovered over
 To avoid wrapping a Pin It button around every image - images only from media.tumblr.com will be wrapped. However if you host a lot of your images through another host you can add it as an option.
 
 ```javascript
-  $("#thing-with-videos").fitVids({ customSelector: "iframe[src^='http://mycoolvideosite.com'], iframe[src^='http://myviiids.com']"});
   $('post').pinterestImageButton({ customSource: "img[src^='http://imgur.com']" });
 ```
