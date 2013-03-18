@@ -1,16 +1,30 @@
-# Tumblr + HTML5 Boilerplate #
+# Tumblr + Pinterest #
 
-Tumblrplate is a naked Tumblr theme built using HTML5 Boilerplate (http://html5boilerplate.com/)
+Use this plugin if you want to have a Pinterest "Pin It" button appear when you hover over an image.
 
-All assets are already uploaded and hosted on Tumblr's static server (e.g normalize.css, Modernizr, jQuery).
+This plugin's structure based off the popular Fitvids.js plugin by Chris Coyier and Paravel.
 
-Includes all post types, {RSS}, {Favicon}, {CustomCSS}, {LinkOpenTag} (for Photo posts), {MetaDescription}, and {PhotoAlt}.
+## How Do I Use It?
+Include jQuery 1.7+ and pinitimages.js in your layout and target your post container with `pinterestImageButton()`.
 
-To begin using, you may want to host your CSS and Javascript files on your own public host (like FTP or even Dropbox).
+```html
+<script src="path/to/jquery.min.js"></script>
+<script src="path/to/jquery.pinitimages.js"></script>
+<script>
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $('post').pinterestImageButton();
+  });
+</script>
+```
 
-This is intended to be just a base to begin creating a theme from, hence why there is are no styles applied. See the demo here: http://boilerplatetheme.tumblr.com/
+This wraps a container around each image with the link hidden until hovered over.
 
-## Common Problems ##
-- As Google Analytics is a part of HTML5 Boilerplate, this has been included in the theme. **But will only be included if a Google Analytics Web Property ID is given as a meta tag.**
+## Adding other image hosts
 
-For more info on creating Tumblr themes check out this guide: http://www.tumblr.com/docs/en/custom_themes
+To avoid wrapping a Pin It button around every image - images only from media.tumblr.com will be wrapped. However if you host a lot of your images through another host you can add it as an option.
+
+```javascript
+  $("#thing-with-videos").fitVids({ customSelector: "iframe[src^='http://mycoolvideosite.com'], iframe[src^='http://myviiids.com']"});
+  $('post').pinterestImageButton({ customSource: "img[src^='http://imgur.com']" });
+```
