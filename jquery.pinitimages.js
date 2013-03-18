@@ -53,7 +53,7 @@
          
       ref.parentNode.insertBefore(div,ref);
       
-      var pageHref = window.location.href;
+      var pageHref = window.location.origin;
       
       var settings = {
         customSource: null  
